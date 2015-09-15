@@ -22,6 +22,10 @@
         vm.subscriptionCost = 0;
         vm.sortData = billsJsonData.sortData;
         vm.toggleSort = toggleSort;
+        vm.getTableName = getTableName;
+        vm.getValue = getValue;
+        vm.getTotal = getTotal;
+
 
         // Initialisation
         activate();
@@ -32,6 +36,9 @@
             // Get the bill data
             billsJsonData.getData()
                 .then(function(){
+                    vm.billData = billsJsonData.billData;
+                    vm.tableData = billsJsonData.tableData;
+
                     vm.calls = billsJsonData.getCalls();
                     vm.callCost = billsJsonData.callCost;
                     vm.subscriptions = billsJsonData.getSubscriptions();
@@ -50,6 +57,28 @@
             vm.calls = billsJsonData.sortData(columnName, sortOrder, vm.calls);
         }
 
+        function getTableName(table){
+            return Object.keys(table)[0];
+        }
+
+        function getTotal(table) {
+            var total = 0;
+
+            _.each(table, function(value, item){
+                _.each(value, function(value){
+                    _.each(value, function(value, key){
+                        if(key === 'cost'){
+                            total = total + value;
+                        }
+                    })
+                });
+            });
+            return total;
+        }
+
+        function getValue(key, value){
+            return (key === 'cost') ? '£' + parseFloat(value).toFixed(2) : value;
+        }
 
 
     }

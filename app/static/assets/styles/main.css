@@ -95,7 +95,7 @@ body {
     margin: 0 10px 0 0;
 }
 
-.cost{
+.total__cost{
     font-size: 18px;
     font-weight: bold;
     text-align: center;
@@ -109,16 +109,8 @@ th {
     cursor: pointer;
 }
 
-.calls {
-    margin-top: 40px;
-}
 
-.calls__text {
-    padding-left: 8px;
-    font-style: italic;
-}
-
-.subscriptions__total {
+.total {
     float: right;
     font-weight: bold;
     font-style: italic;
@@ -133,4 +125,11 @@ th {
 
 .well {
     padding-bottom: 40px;
+}
+
+.table-container {
+    float: none;
+    clear: both;
+    display: block;
+    margin-top: 70px;
 }
