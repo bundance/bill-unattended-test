@@ -3,23 +3,28 @@
         <li><a href="#/">Home</a></li>
         <li class="active"><a href="#about">About</a></li>
     </ul>
-    <h3 class="text-muted">TravelRepublic Code Test</h3>
+    <h3 class="text-muted">NowTV Bill Test</h3>
 </div>
 
 <div class="row marketing">
-    <h1>How to use the Hotel Search</h1>
-    <p>When first loaded, the Hotel Search app reads in all the hotels from the hotels.json file, and displays the first
-        10 results.
-        Once loaded, you can sort the hotels according to distance, starts, cost and rating, and filter the set of
-        hotels you see according to Hotel Name, stars, user rating, and price range. Once you've added your filter, press
-        the Apply button to run the filter through the data.
-    </p>
-    <p>When you filter your hotels, you will obviously get a reduced set of hotels to search through. You can sort this
-    reduced according to the same sort fields as before, to help narrow down your search even further.</p>
-    <p>You can even add multiple filters and still sort the resultant filtered sets, in both Ascending order and
-    Descending order.</p>
-    <p>If you get too few results, just remove the filters and click apply.</p>
+    <h1>How the NowTV Test works</h1>
+    <p>The Bill Test app uses AngularJS to retrieve the bill data from the remote REST endpoint. It then formats the
+    bill by iterating through the data structure, rendering the HTML via ng-repeat, making the HTML nice and light.</p>
+    <p>I follow <a href="https://github.com/johnpapa/angular-styleguide">John Papa's style guide</a> with my AngularJS code, and so have kept my controllers as light as possible,
+    pushing all business logic out into the billsJsonAPIData service.</p>
 
+    <h2>Missing Items</h2>
+    <p>Currently I'm writing this test while on holiday with a Wife who's feeling very neglected! Accordingly, as I hope
+    you understand, there are a number of features not added that would be added if this were production code,
+    and not being written under duress!
+    </p>
+    <p>The most obvious thing missing are the unit tests. However, if you look at my <a href="https://github.com/bundance">Github repo</a>,
+    you can see a number of my other projects, all of which contain extensive unit tests. This at the least should
+    hopefully give you an idea of the comprehensive set of tests I normally create.</p>
+    <p>Also missing is any form of intuitive user interface. I've used Bootstrap for speed, but there are no nice
+    accordions or other UI features I'd ordinarily use. If you look at the <a href="https://github.com/bundance/tr-demo</p>">tr-demo</a>
+    repo, though, you should see examples of UI components I normally put in when I have time.</p>
+    <p>Finally, the code is crying ut fir some directives, but again, time was limited I'm afraid!</p>
 
 </div>
 

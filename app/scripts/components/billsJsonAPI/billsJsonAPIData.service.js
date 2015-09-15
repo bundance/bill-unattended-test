@@ -13,18 +13,13 @@
         var excludeColumns = ['statement', 'total'];
 
         var service = {
-            calls: [],
-            callCost: 0,
-            subscriptions: [],
-            subscriptionCost: 0,
             billData: {},
             tableData: {},
             getData: getData,
-            getCalls: getCalls,
-            getSubscriptions: getSubscriptions,
-            sortData: sortData,
-            getTotalCallsCount: getTotalCallsCount,
-            capitalizeFirstLetter: capitalizeFirstLetter
+            getTotal: getTotal,
+            getValue: getValue,
+            capitalizeFirstLetter: capitalizeFirstLetter,
+            getTableName: getTableName
         };
 
         return service;
@@ -36,19 +31,6 @@
                 .then(function(data){
                     service.billData = data;
                     service.tableData = _getTableData(data);
-
-                    if (data) {
-
-                        if(data.callCharges){
-                            service.calls = data.callCharges.calls;
-                            service.callCost = _calculateCosts(service.calls, 'cost');
-                        }
-                        if(data.package){
-                            service.subscriptions = data.package.subscriptions;
-                            service.subscriptionCost = _calculateCosts(service.subscriptions, 'cost');
-                        }
-                    }
-
                 return service.billData;
             });
         }
@@ -68,40 +50,36 @@
             return tableData;
         }
 
-        function getCalls() {
-            return service.calls;
-        }
 
-        function getSubscriptions() {
-            return service.subscriptions;
-        }
+        function getTotal(table) {
+            var total = 0;
 
-
-        function _calculateCosts(data, key){
-            var cost = 0;
-
-            _.each(data, function(item){
-                cost = cost + item[key];
+            _.each(table, function(value, item){
+                _.each(value, function(value){
+                    _.each(value, function(value, key){
+                        if(key === 'cost'){
+                            total = total + value;
+                        }
+                    })
+                });
             });
+            return total;
+        }
 
-            return cost;
+        function getValue(key, value){
+            return (key === 'cost') ? '£' + parseFloat(value).toFixed(2) : value;
         }
 
 
-        function getTotalCallsCount() {
-            return (_.isEmpty(service.calls) ) ? 0 : service.calls.length;
-
-        }
-
-        function sortData(sortColumn, sortOrder, data){
-            return (sortOrder === 'desc')
-                ? _.sortBy(data, sortColumn).reverse()
-                : _.sortBy(data, sortColumn);
+        function getTableName(table){
+            return capitalizeFirstLetter(Object.keys(table)[0]);
         }
 
         function capitalizeFirstLetter(string) {
             return string.charAt(0).toUpperCase() + string.slice(1);
         }
+
+
 
     }
 
