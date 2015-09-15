@@ -28,7 +28,7 @@ you've run the app, or read about.html) for a list of missing things.
 Clone the branch '001-dryer-version' (https://github.com/bundance/bill-unattended-test/tree/001-dryer-version)
 From the command line:
 
-run npm install
-run bower install
-run grunt connect
-browse to localhost:8000
+* run npm install
+* run bower install
+* run grunt connect
+* browse to localhost:8000
