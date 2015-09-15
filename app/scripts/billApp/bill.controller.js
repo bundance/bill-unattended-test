@@ -25,6 +25,7 @@
         vm.getTableName = getTableName;
         vm.getValue = getValue;
         vm.getTotal = getTotal;
+        vm.capitalizeFirstLetter = billsJsonData.capitalizeFirstLetter;
 
 
         // Initialisation
@@ -58,7 +59,7 @@
         }
 
         function getTableName(table){
-            return Object.keys(table)[0];
+            return billsJsonData.capitalizeFirstLetter(Object.keys(table)[0]);
         }
 
         function getTotal(table) {
@@ -79,7 +80,6 @@
         function getValue(key, value){
             return (key === 'cost') ? '£' + parseFloat(value).toFixed(2) : value;
         }
-
 
     }
 })();

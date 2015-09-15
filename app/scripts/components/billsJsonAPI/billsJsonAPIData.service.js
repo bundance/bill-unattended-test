@@ -23,7 +23,8 @@
             getCalls: getCalls,
             getSubscriptions: getSubscriptions,
             sortData: sortData,
-            getTotalCallsCount: getTotalCallsCount
+            getTotalCallsCount: getTotalCallsCount,
+            capitalizeFirstLetter: capitalizeFirstLetter
         };
 
         return service;
@@ -96,6 +97,10 @@
             return (sortOrder === 'desc')
                 ? _.sortBy(data, sortColumn).reverse()
                 : _.sortBy(data, sortColumn);
+        }
+
+        function capitalizeFirstLetter(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
         }
 
     }
