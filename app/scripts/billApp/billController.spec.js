@@ -6,28 +6,24 @@ describe("billController", function(){
             'ngResource',
             'ngSanitize',
             'ngRoute',
-            'rest.billsJsonApi',   // change this to whatever ReST service you're using
-            'momUI.momPaginator',
-            'momUI',
-            'ui.bootstrap-slider',
+            'rest.billsJsonApi',
             'billApp'));
 
         var scope = {},
-            momPaginator,
             billsJsonData,
-            travelRepublicController;
+            billController;
 
-        beforeEach(inject(function($rootScope, _momPaginator_, _billsJsonData_, $controller){
-            scope = $rootScope.$new();
-            momPaginator = _momPaginator_;
+        beforeEach(inject(function(_billsJsonData_, $controller){
             billsJsonData = _billsJsonData_;
 
-            travelRepublicController = $controller(scope, momPaginator, billsJsonData);
+            billController = $controller('billController', {
+                'billsJsonData': billsJsonData
+            });
 
-        }))
+        }));
 
         it("Should be defined", function(){
-            expect(travelRepublicController).toBeDefined();
+            expect(billController).toBeDefined();
         });
 
 

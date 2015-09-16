@@ -5,9 +5,9 @@
         .module('billApp')
         .controller('billController', billController);
 
-    billController.$inject = ['$scope', 'billsJsonData'];
+    billController.$inject = ['billsJsonData'];
 
-    function billController($scope, billsJsonData) {
+    function billController(billsJsonData) {
 
         var vm = this;
 

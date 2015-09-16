@@ -16,14 +16,12 @@ module.exports = function(config) {
         'app/bower_components/angular-resource/angular-resource.js',
         'app/bower_components/angular-sanitize/angular-sanitize.js',
         'app/bower_components/angular-route/angular-route.js',
-        'app/bower_components/angular-bootstrap-slider/slider.js',
-        'app/lib/*.js',
+        'app/static/data/mockBill.js',
         'app/scripts/components/**/*.module.js',
         'app/scripts/components/**/*.*.js',
         'app/scripts/components/**/*.js',
         'app/scripts/billApp/*.js',
-        'app/scripts/billApp/*.*.js',
-        'test/static/data/hotels.json'
+        'app/scripts/billApp/*.*.js'
 
     ],
 
@@ -54,7 +52,7 @@ module.exports = function(config) {
 
 
     // Continuous Integration mode
-    // if true, it capture browsers, run tests and exit
+    // if true, it captures browsers, runs tests and exits
     singleRun: false
   });
 };

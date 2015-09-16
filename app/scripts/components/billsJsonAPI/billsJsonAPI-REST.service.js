@@ -20,6 +20,7 @@
 
     function billsJsonREST($http) {
 
+        var DEFAULT_URL = 'https://still-scrubland-9880.herokuapp.com/bill.json';
         var service = {
             getData: getData,
         };
@@ -29,12 +30,10 @@
         ///////////
 
 
-        function getData(){
+        function getData(url){
             return $http
-                .get('https://still-scrubland-9880.herokuapp.com/bill.json')
+                .get(url || DEFAULT_URL)
                 .then(function(response){
-                    console.log("Data retirve:");
-                    console.dir(response);
                     return response.data;
                 });
         }
