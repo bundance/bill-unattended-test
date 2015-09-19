@@ -5,9 +5,9 @@
         .module('billApp')
         .controller('billController', billController);
 
-    billController.$inject = ['billsJsonData'];
+    billController.$inject = ['billData'];
 
-    function billController(billsJsonData) {
+    function billController(billData) {
 
         var vm = this;
 
@@ -17,10 +17,10 @@
             cost: 'unsorted'
         };
 
-        vm.getTableName = billsJsonData.getTableName;
-        vm.getValue = billsJsonData.getValue;
-        vm.getTotal = billsJsonData.getTotal;
-        vm.capitalizeFirstLetter = billsJsonData.capitalizeFirstLetter;
+        vm.getTableName = billData.getTableName;
+        vm.getValue = billData.getValue;
+        vm.getTotal = billData.getTotal;
+        vm.capitalizeFirstLetter = billData.capitalizeFirstLetter;
 
 
         // Initialisation
@@ -30,10 +30,10 @@
 
         function activate(){
             // Get the bill data
-            billsJsonData.getData()
+            billData.getData()
                 .then(function(){
-                    vm.billData = billsJsonData.billData;
-                    vm.tableData = billsJsonData.tableData;
+                    vm.billData = billData.billData;
+                    vm.tableData = billData.tableData;
             });
         }
 

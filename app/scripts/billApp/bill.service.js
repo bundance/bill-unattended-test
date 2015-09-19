@@ -3,11 +3,11 @@
 
     angular
         .module('rest.billsJsonApi')
-        .factory('billsJsonData', billsJsonData);
+        .factory('billData', billData);
 
-    billsJsonData.$inject = ['billsJsonREST'];
+    billData.$inject = ['billsJsonREST'];
 
-    function billsJsonData(billsJsonREST){
+    function billData(billsJsonREST){
 
         var excludeColumns = ['statement', 'total'];
 

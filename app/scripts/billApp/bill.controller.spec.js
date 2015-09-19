@@ -10,14 +10,14 @@ describe("billController", function(){
             'billApp'));
 
         var scope = {},
-            billsJsonData,
+            billData,
             billController;
 
-        beforeEach(inject(function(_billsJsonData_, $controller){
-            billsJsonData = _billsJsonData_;
+        beforeEach(inject(function(_billData_, $controller){
+            billData = _billData_;
 
             billController = $controller('billController', {
-                'billsJsonData': billsJsonData
+                'billData': billData
             });
 
         }));

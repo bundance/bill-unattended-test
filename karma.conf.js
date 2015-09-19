@@ -25,8 +25,10 @@ module.exports = function(config) {
           'app/scripts/components/**/*.module.js',
           'app/scripts/components/**/*.service.js',
           'app/scripts/billApp/*.controller.js',
-          'app/static/data/mocksModule.js',
-          'app/static/data/*.js',
+          'app/scripts/billApp/*.service.js',
+          'app/scripts/testing/jasmineMatchers/*.js',
+          'app/scripts/testing/mocks/mocksModule.js',
+          'app/scripts/testing/mocks/*.js',
           'app/scripts/components/**/*.spec.js',
           'app/scripts/billApp/*.spec.js'
       ],

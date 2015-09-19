@@ -1,10 +1,10 @@
-describe("billsJSonAPIData.service", function(){
+describe("bill.service", function(){
 
     'use strict';
 
     var $scope,
         $httpBackend,
-        billsJsonData,
+        billData,
         mockBillData,
         mockTableData,
         _,
@@ -24,10 +24,10 @@ describe("billsJSonAPIData.service", function(){
         'underscore'
     ));
 
-    beforeEach(inject(function(_$rootScope_, _$httpBackend_, _billsJsonData_, _mockBillData_, _mockTableData_, ___){
+    beforeEach(inject(function(_$rootScope_, _$httpBackend_, _billData_, _mockBillData_, _mockTableData_, ___){
         $scope = _$rootScope_.$new();
         $httpBackend = _$httpBackend_;
-        billsJsonData = _billsJsonData_;
+        billData = _billData_;
         mockBillData = _mockBillData_;
         mockTableData = _mockTableData_;
         _ = ___;
@@ -57,7 +57,7 @@ describe("billsJSonAPIData.service", function(){
 
         it("should retrieve the mock bill data", function(){
 
-            billsJsonData.getData()
+            billData.getData()
                 .then(function(response){
                     expect(response).toBeJsonEqual(mockBillData.billData[0]);
                     spies.success();
@@ -74,9 +74,9 @@ describe("billsJSonAPIData.service", function(){
 
         it("should set service.billData to the retrieved data", function(){
 
-            billsJsonData.getData()
+            billData.getData()
                 .then(function(response){
-                    expect(billsJsonData.billData).toBeJsonEqual(mockBillData.billData[0]);
+                    expect(billData.billData).toBeJsonEqual(mockBillData.billData[0]);
                     spies.success();
                 })
                 .catch(spies.error);
@@ -91,9 +91,9 @@ describe("billsJSonAPIData.service", function(){
 
         it("should set service.tableData to the data that needs to be displayed in tables", function(){
 
-            billsJsonData.getData()
+            billData.getData()
                 .then(function(response){
-                    expect(billsJsonData.tableData).toBeJsonEqual(mockTableData);
+                    expect(billData.tableData).toBeJsonEqual(mockTableData);
                     spies.success();
                 })
                 .catch(spies.error);
@@ -124,7 +124,7 @@ describe("billsJSonAPIData.service", function(){
                 ]
             };
 
-            expect(billsJsonData.getTotal(testTable)).toBe(55);
+            expect(billData.getTotal(testTable)).toBe(55);
         });
 
         it("Should return the zero when no properties called 'cost' are found", function(){
@@ -140,24 +140,24 @@ describe("billsJSonAPIData.service", function(){
                 ]
             };
 
-            expect(billsJsonData.getTotal(testTable)).toBe(0);
+            expect(billData.getTotal(testTable)).toBe(0);
         });
     });
 
     describe("getValue() function", function(){
 
         it("Should return the value supplied decorated with the £ symbol, when the key is 'cost'", function(){
-            expect(billsJsonData.getValue('cost', 12.56)).toEqual('£12.56');
+            expect(billData.getValue('cost', 12.56)).toEqual('£12.56');
         });
 
         it("Should return the value supplied unchanged when the key is NOT 'cost'", function(){
-            expect(billsJsonData.getValue('notcost', 12.56)).toEqual(12.56);
+            expect(billData.getValue('notcost', 12.56)).toEqual(12.56);
         });
     });
 
     describe ("capitalizeFirstLetter() function", function(){
         it("Should return the value supplied with the first letter in upper case", function(){
-            expect(billsJsonData.capitalizeFirstLetter('value')).toEqual('Value');
+            expect(billData.capitalizeFirstLetter('value')).toEqual('Value');
         });
     });
 
