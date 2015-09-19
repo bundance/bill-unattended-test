@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('mockBillData')
+        .module('mockData')
         .value('mockBillData', {
             billData: [{
                 "statement": {

@@ -9,24 +9,27 @@ module.exports = function(config) {
     // testing framework to use (jasmine/mocha/qunit/...)
     frameworks: ['jasmine'],
 
-    // list of files / patterns to load in the browser
-    files: [
-        'app/bower_components/angular/angular.js',
-        'app/bower_components/angular-mocks/angular-mocks.js',
-        'app/bower_components/angular-resource/angular-resource.js',
-        'app/bower_components/angular-sanitize/angular-sanitize.js',
-        'app/bower_components/angular-route/angular-route.js',
-        'app/static/data/mockBill.js',
-        'app/scripts/components/**/*.module.js',
-        'app/scripts/components/**/*.*.js',
-        'app/scripts/components/**/*.js',
-        'app/scripts/billApp/*.js',
-        'app/scripts/billApp/*.*.js'
-
-    ],
-
     // list of files / patterns to exclude
     exclude: [],
+
+      // list of files / patterns to load in the browser
+      files: [
+          'app/bower_components/angular/angular.js',
+          'app/bower_components/angular-mocks/angular-mocks.js',
+          'app/bower_components/angular-resource/angular-resource.js',
+          'app/bower_components/angular-sanitize/angular-sanitize.js',
+          'app/bower_components/angular-route/angular-route.js',
+          'bower_components/underscore/underscore.js',
+          'app/scripts/lib/*.js',
+          'app/scripts/billApp/app.js',
+          'app/scripts/components/**/*.module.js',
+          'app/scripts/components/**/*.service.js',
+          'app/scripts/billApp/*.controller.js',
+          'app/static/data/mocksModule.js',
+          'app/static/data/*.js',
+          'app/scripts/components/**/*.spec.js',
+          'app/scripts/billApp/*.spec.js'
+      ],
 
     // web server port
     port: 8080,

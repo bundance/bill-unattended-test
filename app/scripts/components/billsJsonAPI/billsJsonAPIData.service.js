@@ -9,7 +9,6 @@
 
     function billsJsonData(billsJsonREST){
 
-
         var excludeColumns = ['statement', 'total'];
 
         var service = {
@@ -39,7 +38,7 @@
             var tableData = [],
                 tableItem = {};
 
-            _.each(data, function(value, key, list){
+            _.each(data, function(value, key){
                 if(!_.contains(excludeColumns, key)){
                     tableItem[key] = value;
                     tableData.push(tableItem[key]);
@@ -54,7 +53,7 @@
         function getTotal(table) {
             var total = 0;
 
-            _.each(table, function(value, item){
+            _.each(table, function(value){
                 _.each(value, function(value){
                     _.each(value, function(value, key){
                         if(key === 'cost'){
@@ -78,8 +77,6 @@
         function capitalizeFirstLetter(string) {
             return string.charAt(0).toUpperCase() + string.slice(1);
         }
-
-
 
     }
 

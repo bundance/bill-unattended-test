@@ -16,13 +16,13 @@
         .module('rest.billsJsonApi')
         .factory('billsJsonREST', billsJsonREST);
 
-    billsJsonREST.$inject = ['$http'];
+    billsJsonREST.$inject = ['$http', 'mockBillData'];
 
-    function billsJsonREST($http) {
+    function billsJsonREST($http, mockBillData) {
 
         var DEFAULT_URL = 'https://still-scrubland-9880.herokuapp.com/bill.json';
         var service = {
-            getData: getData,
+            getData: getData
         };
 
         return service;
@@ -35,6 +35,9 @@
                 .get(url || DEFAULT_URL)
                 .then(function(response){
                     return response.data;
+                })
+                .catch(function(){
+                    return mockBillData.billData[0];
                 });
         }
     }

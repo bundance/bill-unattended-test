@@ -6,7 +6,8 @@
             'ngResource',
             'ngSanitize',
             'ngRoute',
-            'rest.billsJsonApi'
+            'rest.billsJsonApi',
+            'underscore'
 
         ])
         .config(function ($routeProvider) {
