@@ -32,23 +32,24 @@
                     service.tableData = _getTableData(data);
                 return service.billData;
             });
-        }
 
-        function _getTableData(data){
-            var tableData = [],
-                tableItem = {};
 
-            _.each(data, function(value, key){
-                if(!_.contains(excludeColumns, key)){
-                    tableItem[key] = value;
-                    tableData.push(tableItem[key]);
+            //////// Helper function ////////
+            function _getTableData(data){
+                var tableData = [],
                     tableItem = {};
-                }
-            });
 
-            return tableData;
+                _.each(data, function(value, key){
+                    if(!_.contains(excludeColumns, key)){
+                        tableItem[key] = value;
+                        tableData.push(tableItem[key]);
+                        tableItem = {};
+                    }
+                });
+
+                return tableData;
+            }
         }
-
 
         function getTotal(table) {
             var total = 0;
@@ -68,7 +69,6 @@
         function getValue(key, value){
             return (key === 'cost') ? '£' + parseFloat(value).toFixed(2) : value;
         }
-
 
         function getTableName(table){
             return capitalizeFirstLetter(Object.keys(table)[0]);

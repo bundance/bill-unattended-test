@@ -1,5 +1,7 @@
 describe("billsJSonAPIData.service", function(){
 
+    'use strict';
+
     var $scope,
         $httpBackend,
         billsJsonData,
