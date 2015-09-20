@@ -15,11 +15,11 @@ https://still-scrubland-9880.herokuapp.com/bill.json
 
 
 ##Solution
-Written in AngularJS< but not enough time to complete everything. Please read the About me section (click on About once
-you've run the app, or read about.html) for a list of missing things.
+Written in AngularJS, with Bootstrap used for the main CSS framework. Please read the About me section (click on About once
+you've run the app, or read about.html) for more details.
 
 ## Installation:
-Clone the branch '001-dryer-version' (https://github.com/bundance/bill-unattended-test/tree/001-dryer-version)
+Clone the branch '005-directive-table' (https://github.com/bundance/bill-unattended-test/tree/005-directive-table)
 
 From the command line:
 
