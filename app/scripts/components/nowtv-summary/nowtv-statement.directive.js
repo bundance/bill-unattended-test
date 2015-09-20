@@ -22,11 +22,7 @@
         return directive;
 
         function link(scope, elem, attrs, controller){
-            console.log('directive link scope=');
-            console.dir(scope);
-
             controller.statementData = scope.statementData;
-
         }
     }
 })();

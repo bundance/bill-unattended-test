@@ -5,9 +5,9 @@
         .module('rest.billsJsonApi')
         .factory('billData', billData);
 
-    billData.$inject = ['billsJsonREST'];
+    billData.$inject = ['billsJsonREST', 'billTable'];
 
-    function billData(billsJsonREST){
+    function billData(billsJsonREST, billTable){
 
         var excludeColumns = ['statement', 'total'];
 
@@ -16,8 +16,8 @@
             tableData: {},
             getData: getData,
             getTotal: getTotal,
-            getValue: getValue,
-            capitalizeFirstLetter: capitalizeFirstLetter,
+            //getValue: getValue,
+            //capitalizeFirstLetter: capitalizeFirstLetter,
             getTableName: getTableName
         };
 
@@ -73,16 +73,8 @@
             return total;
         }
 
-        function getValue(key, value){
-            return (key === 'cost') ? '£' + parseFloat(value).toFixed(2) : value;
-        }
-
         function getTableName(table){
-            return capitalizeFirstLetter(Object.keys(table)[0]);
-        }
-
-        function capitalizeFirstLetter(string) {
-            return string.charAt(0).toUpperCase() + string.slice(1);
+            return billTable.capitalizeFirstLetter(Object.keys(table)[0]);
         }
 
     }

@@ -7,20 +7,7 @@
         </div>
         <div class="table-container" ng-repeat="table in bill.tableData">
             <h4>Your {{ bill.getTableName(table) }}:</h4>
-            <div ng-repeat="item in table">
-                    <table class="table table-striped table-hover table-bordered" >
-                        <thead>
-                        <tr>
-                            <th class="sdr-th" ng-repeat="(key, value) in item[0] track by $index">{{ bill.capitalizeFirstLetter(key) }}</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr  ng-repeat="subItem in item track by $index">
-                            <td  ng-repeat="(key, value) in subItem track by $index">{{bill.getValue(key, value)}}</td>
-                        </tr>
-                        </tbody>
-                    </table>
-            </div>
+            <nowtv-table nowtv-table-data="table"></nowtv-table>
             <div class="total">
                 <span class="total__text">Total:</span>
                 <span class="total__cost">{{bill.getTotal(table) | currency: '£' : 2}}</span>

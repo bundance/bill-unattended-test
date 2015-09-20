@@ -11,8 +11,6 @@
 
         var vm = this;
 
-        //vm.generated =
-
         console.log('directive controller, $scope.statementData=');
         console.dir($scope.statementData);
 
