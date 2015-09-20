@@ -1,16 +1,10 @@
-<div class="header">
-	<ul class="nav nav-pills pull-right">
-		<li class="active"><a href="/app/#/">Home</a></li>
-		<li><a href="#about">About</a></li>
-	</ul>
-	<h3 class="text-muted">NowTV Code Test</h3>
-</div>
+<nowtv-header statement-date="bill.billData.statement.generated"></nowtv-header>
 
 <div class="row marketing">
-    <h1>NowTV Statement</h1>
-    <h6>by Mike Evans</h6>
-
     <div>
+        <div class="well">
+            <nowtv-statement statement-data="bill.billData.statement"></nowtv-statement>
+        </div>
         <div class="table-container" ng-repeat="table in bill.tableData">
             <h4>Your {{ bill.getTableName(table) }}:</h4>
             <div ng-repeat="item in table">

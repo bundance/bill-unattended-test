@@ -34,6 +34,9 @@
                 .then(function(){
                     vm.billData = billData.billData;
                     vm.tableData = billData.tableData;
+
+                    console.log('bill.controller.billData=');
+                    console.dir(vm.billData);
             });
         }
 

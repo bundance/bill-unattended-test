@@ -55,11 +55,12 @@ describe("bill.service", function(){
             $httpBackend.verifyNoOutstandingRequest();
         });
 
+        ////////////// Now for the tests //////////////
         it("should retrieve the mock bill data", function(){
 
             billData.getData()
                 .then(function(response){
-                    expect(response).toBeJsonEqual(mockBillData.billData[0]);
+                    expect(response).toBeJsonEqual(mockBillData.formattedBillData[0]);
                     spies.success();
                 })
                 .catch(spies.error);
@@ -76,7 +77,7 @@ describe("bill.service", function(){
 
             billData.getData()
                 .then(function(response){
-                    expect(billData.billData).toBeJsonEqual(mockBillData.billData[0]);
+                    expect(billData.billData).toBeJsonEqual(mockBillData.formattedBillData[0]);
                     spies.success();
                 })
                 .catch(spies.error);

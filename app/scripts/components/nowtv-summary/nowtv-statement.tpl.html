@@ -1,0 +1,16 @@
+<div class="statement">
+    <h3 class="statement__heading">Summary</h3>
+    <h5>
+        For the period
+        <span class="statement__date">{{ statement.statementData.period.from | date:'MMM d, y':'GMT'}}</span>
+        to
+        <span class="statement__date">{{ statement.statementData.period.to | date:'MMM d, y':'GMT'}}</span>
+    </h5>
+    <div class="statement__total">
+        <span class="statement__total--text">Total:</span>
+        <span class="statement__total--currency">{{ statement.statementData.total | currency:'£':2 }}</span>
+        , payable by
+        <span class="statement__date">{{ statement.statementData.due | date:'MMM d, y':'GMT'}}</span>
+    </div>
+    </div>
+</div>

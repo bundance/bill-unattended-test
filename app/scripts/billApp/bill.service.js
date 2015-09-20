@@ -28,13 +28,20 @@
         function getData() {
             return billsJsonREST.getData()
                 .then(function(data){
-                    service.billData = data;
+                    service.billData = _formatData(data);
                     service.tableData = _getTableData(data);
                 return service.billData;
             });
 
 
-            //////// Helper function ////////
+            //////// Helper functions ////////
+            function _formatData(data){
+                var formattedData = _.omit(data, 'total');
+                formattedData.statement.total = data.total;
+
+                return formattedData;
+            }
+
             function _getTableData(data){
                 var tableData = [],
                     tableItem = {};

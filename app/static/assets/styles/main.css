@@ -133,3 +133,33 @@ th {
     display: block;
     margin-top: 70px;
 }
+
+
+.statement__heading {
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #999999;
+}
+.statement__date{
+    font-style: italic;
+}
+
+.statement__total--text{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.statement__total--currency{
+    font-weight: bold;
+    font-size: 24px;
+    font-style: italic;
+}
+
+
+.heading {
+    font-size: 32px;
+    font-style: italic;
+}
+
+
+.header__generated-date { }
