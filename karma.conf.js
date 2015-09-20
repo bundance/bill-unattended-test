@@ -24,6 +24,8 @@ module.exports = function(config) {
           'app/scripts/billApp/app.js',
           'app/scripts/components/**/*.module.js',
           'app/scripts/components/**/*.service.js',
+          'app/scripts/components/**/*.controller.js',
+          'app/scripts/components/**/*.directive.js',
           'app/scripts/billApp/*.controller.js',
           'app/scripts/billApp/*.service.js',
           'app/scripts/testing/jasmineMatchers/*.js',

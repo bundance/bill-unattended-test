@@ -145,21 +145,4 @@ describe("bill.service", function(){
         });
     });
 
-    describe("getValue() function", function(){
-
-        it("Should return the value supplied decorated with the £ symbol, when the key is 'cost'", function(){
-            expect(billData.getValue('cost', 12.56)).toEqual('£12.56');
-        });
-
-        it("Should return the value supplied unchanged when the key is NOT 'cost'", function(){
-            expect(billData.getValue('notcost', 12.56)).toEqual(12.56);
-        });
-    });
-
-    describe ("capitalizeFirstLetter() function", function(){
-        it("Should return the value supplied with the first letter in upper case", function(){
-            expect(billData.capitalizeFirstLetter('value')).toEqual('Value');
-        });
-    });
-
 });

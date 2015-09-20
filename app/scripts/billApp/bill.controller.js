@@ -11,17 +11,10 @@
 
         var vm = this;
 
-        var columnSortDirection = {
-            called: 'asc',
-            duration: 'unsorted',
-            cost: 'unsorted'
-        };
-
         vm.getTableName = billData.getTableName;
         vm.getValue = billData.getValue;
         vm.getTotal = billData.getTotal;
         vm.capitalizeFirstLetter = billData.capitalizeFirstLetter;
-
 
         // Initialisation
         activate();
@@ -34,9 +27,6 @@
                 .then(function(){
                     vm.billData = billData.billData;
                     vm.tableData = billData.tableData;
-
-                    console.log('bill.controller.billData=');
-                    console.dir(vm.billData);
             });
         }
 
