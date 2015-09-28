@@ -16,8 +16,6 @@
             tableData: {},
             getData: getData,
             getTotal: getTotal,
-            //getValue: getValue,
-            //capitalizeFirstLetter: capitalizeFirstLetter,
             getTableName: getTableName
         };
 
