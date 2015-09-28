@@ -23,7 +23,11 @@ Clone the branch '005-directive-table' (https://github.com/bundance/bill-unatten
 
 From the command line:
 
+## Running
 * run npm install
 * run bower install
 * run grunt connect
 * browse to localhost:8000
+
+## Testing:
+* run karma start
